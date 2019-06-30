@@ -1,6 +1,3 @@
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
-
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.UUID;
@@ -18,7 +15,6 @@ public class PigeonCache {
      *
      * @return instance of {@link PigeonCache} to work with
      */
-    @NotNull
     public static PigeonCache getInstance() {
         if (sInstance == null) {
             sInstance = new PigeonCache();
@@ -44,7 +40,6 @@ public class PigeonCache {
      * use this key to pass in intents, bundles or any place to fetch the stored object
      * @see {{@link PigeonCache#put(Object)}}
      */
-    @Nullable
     public String put(String key, Object obj) {
         if (obj == null) {
             return null;
@@ -64,7 +59,6 @@ public class PigeonCache {
      *             {@link PigeonCache#put(String, Object)}
      * @return key associated with obj, null if obj is null
      */
-    @Nullable
     public <T> T get(Class<T> type, String key) {
         if (!isKeyValid(key)) {
             return null;
